@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gujarat Innovation Portal</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #0055a5;
+      padding: 10px 0;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #0077cc;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    main section {
+      display: none;
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .active-section {
+      display: block;
+    }
+
+    main h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    main p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    form {
+      margin-top: 15px;
+    }
+
+    form input[type="text"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    form textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    form button {
+      background-color: #0055a5;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #0077cc;
+    }
+
+    #formMessage {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #003366;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav li {
+        margin: 10px 0;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      main {
+        padding: 20px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gujarat Research, Innovation & Startup Portal</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('research')">Research</a></li>
+        <li><a href="#" onclick="showSection('ipr')">IPR</a></li>
+        <li><a href="#" onclick="showSection('startups')">Start-ups</a></li>
+        <li><a href="#" onclick="showSection('form')">Submit Idea</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="active-section">
+      <h2>Welcome</h2>
+      <p>The Gujarat Innovation Portal is a centralized digital platform to facilitate and promote research, innovation, intellectual property rights, and start-up culture within the state. The portal connects institutions, researchers, and young entrepreneurs with government schemes, funding opportunities, mentorship, and collaboration tools.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p>Gujarat houses top academic and research institutions contributing to cutting-edge technologies and social innovations. This section provides information on:</p>
+      <ul>
+        <li>Government-funded research projects and how to apply</li>
+        <li>Collaborations with industry and academia</li>
+        <li>Success stories and innovation case studies</li>
+        <li>Research labs and incubators across Gujarat</li>
+      </ul>
+    </section>
+
+    <section id="ipr">
+      <h2>Intellectual Property Rights (IPR)</h2>
+      <p>Protecting your innovations is crucial. This section supports innovators and institutions in:</p>
+      <ul>
+        <li>Filing patent, trademark, and copyright applications</li>
+        <li>Understanding the IPR process and benefits</li>
+        <li>Connecting with legal experts and patent agents</li>
+        <li>Tracking the status of your IPR filings</li>
+      </ul>
+    </section>
+
+    <section id="startups">
+      <h2>Start-ups</h2>
+      <p>Gujarat is rapidly emerging as a vibrant start-up hub. Whether you're a student, researcher, or entrepreneur, explore:</p>
+      <ul>
+        <li>Incubation centers and co-working spaces across the state</li>
+        <li>Seed funding and venture capital support</li>
+        <li>Mentorship programs and startup bootcamps</li>
+        <li>Networking with fellow founders and industry leaders</li>
+      </ul>
+    </section>
+
+    <section id="form">
+      <h2>Submit Your Innovation Idea</h2>
+      <p>Have a great idea that can impact society, industry, or technology? Submit it here for support, mentorship, and potential funding.</p>
+      <form id="ideaForm">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br />
+        <label for="idea">Innovation Idea:</label><br />
+        <textarea id="idea" name="idea" required></textarea><br />
+        <button type="submit">Submit</button>
+        <p id="formMessage"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Gujarat Innovation Initiative</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("main section");
+      sections.forEach((section) => {
+        section.classList.remove("active-section");
+      });
+      document.getElementById(id).classList.add("active-section");
+    }
+
+    document.getElementById("ideaForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const idea = document.getElementById("idea").value.trim();
+
+      if (name && idea) {
+        document.getElementById("formMessage").textContent = "Thank you for your submission!";
+        document.getElementById("ideaForm").reset();
+      } else {
+        document.getElementById("formMessage").textContent = "Please fill in all fields.";
+      }
+    });
+  </script>
+</body>
+</html>
